@@ -1,0 +1,1 @@
+winget install GlazeWM --silent --accept-package-agreements
