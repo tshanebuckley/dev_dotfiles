@@ -9,28 +9,24 @@ GHOSTTY_DIR="${GHOSTTY_BIN}/ghostty"
 
 # make sure that the build output directory exists
 # NOTE: we still manally ensure that these exist so we can idependenty re-install ghostty.
-# To accomplish this, the "GHOSTTY_DIR" directory in the bin must be removed before re-
-# executing this script.
 mkdir -p "$GHOSTTY_USER"
 mkdir -p "$GHOSTTY_LOCAL"
 mkdir -p "$GHOSTTY_BIN"
 
+# directory to download the app image into
+GHOSTTY="${SCRIPT_DIR}/ghostty_app"
+# Make the download directory
+mkdir -p "$GHOSTTY"
+GHOSTTY_APP="${GHOSTTY}/Ghostty-${VERSION}-${ARCH}.AppImage"
 # install ghostty if not installed
-if [ ! -f "$GHOSTTY_DIR" ]; then
-    # Create a directory to install the app image into and cd there
-    GHOSTTY="${SCRIPT_DIR}/ghostty"
-    mkdir -p "$GHOSTTY"
-    cd $GHOSTTY
-
+if [ ! -f "$GHOSTTY_APP" ]; then
+    
     # Download the latest AppImage package from releases
-    wget -O https://github.com/psadi/ghostty-appimage/releases/download/v${VERSION}${TAG}/Ghostty-${VERSION}-${ARCH}.AppImage
+    wget -O "${GHOSTTY_APP}" "https://github.com/psadi/ghostty-appimage/releases/download/v${VERSION}${TAG}/Ghostty-${VERSION}-${ARCH}.AppImage"
 
     # Make the AppImage executable
-    chmod +x Ghostty-${VERSION}-${ARCH}.AppImage
+    chmod +x "${GHOSTTY_APP}"
 
     # Without sudo, XDG base spec mandate to install ghostty into the venv
-    install ./Ghostty-${VERSION}-${ARCH}.AppImage $GHOSTTY_DIR
-
-    # return to the script's directory
-    cd $SCRIPT_DIR
+    install "${GHOSTTY_APP}" $GHOSTTY_DIR
 fi
