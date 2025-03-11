@@ -72,8 +72,29 @@ vim.keymap.set("t", "<A-h>", [[<Left>]])
 vim.keymap.set("t", "<A-j>", [[<Down>]])
 vim.keymap.set("t", "<A-k>", [[<Up>]])
 vim.keymap.set("t", "<A-l>", [[<Right>]])
--- Disable default neovim diagnostics
+-- enable extmarks (helps virtual_lines below work properly)
+vim.o.laststatus = 3
+vim.o.cmdheight = 1
+vim.o.showmode = false
+vim.o.termguicolors = true
+-- Disable default neovim text diagnostics in favor of lines
 vim.diagnostic.config({ virtual_text = false })
+vim.diagnostic.config({ virtual_lines = true })
+-- turns on in-line diagnostics
+local function inline_diagnostics_on()
+  vim.diagnostic.config({ virtual_lines = true })
+end
+-- turns off in-line diagnostics
+local function inline_diagnostics_off()
+  vim.diagnostic.config({ virtual_lines = false })
+end
+-- turns on in-line diagnostics but only for the current line
+local function only_current_line()
+  vim.diagnostic.config({ virtual_lines = { only_current_line = true } })
+end
+vim.keymap.set("", "<A-i>", inline_diagnostics_on, { desc = "Turn on in-line diagnostics" })
+vim.keymap.set("", "<A-o>", inline_diagnostics_off, { desc = "Turn off in-line diagnostics" })
+vim.keymap.set("", "<A-u>", only_current_line, { desc = "Turn on current-line diagnostics" })
 -- only allow a single type of each diagnostic sign in the gutter
 -- 1. Store original handlers
 local orig_signs_handler = vim.diagnostic.handlers.signs

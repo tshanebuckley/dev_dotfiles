@@ -17,6 +17,13 @@ coreutils-full.pkg-path = "coreutils-full"
 starship.pkg-path = "starship"
 nerdfonts.pkg-path = "nerdfonts"
 wget.pkg-path = "wget"
+unzip.pkg-path = "unzip"
+fzf.pkg-path = "fzf"
+ripgrep.pkg-path = "ripgrep"
+gcc.pkg-path = "gcc"
+luarocks.pkg-path = "luarocks"
+which.pkg-path = "which"
+fd.pkg-path = "fd"
 # hello.pkg-path = "hello"
 # nodejs = { version = "^20.15.1", pkg-path = "nodejs" }
 
@@ -49,16 +56,18 @@ wget.pkg-path = "wget"
 # `profile.{bash,fish,tcsh,zsh}` is sourced by the corresponding shell.
 [profile]
 common = '''
-    SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-    # clear all environment variables other than the flox specific ones
-    for var in $(env | cut -d'=' -f1); do
-        if [[ ! "$var" =~ ^(_)?FLOX ]]; then
-        # Unset the variable
-        unset "$var"
-        fi
-    done
+    # symlink our dotfiles
+    echo $PWD
+    echo $VENV_HOME
+    stow --dir="$PWD" --target="$VENV_HOME" -R nvim -R zellij
+    # symlink our flox executable to the venv user space
+    FLOX_SYMLINK=/usr/bin/flox
+    if [ ! -e "${VENV_HOME}/.local/bin/flox" ]; then
+        ln -s "${FLOX_SYMLINK}" "${VENV_HOME}/.local/bin"
+    fi
+    # pass the venv home value forward to be used in sourcing the .bashrc file
     SCRIPT_DIR="$VENV_HOME"
-    #source "${VENV_HOME}/.bashrc"
+    source "${VENV_HOME}/.bashrc"
 '''
 # common = '''
 #   echo "it's gettin' flox in here"

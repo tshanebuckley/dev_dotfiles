@@ -39,23 +39,23 @@ return {
 		-- Define signs for all breakpoint states
 		vim.fn.sign_define(
 			"DapBreakpoint",
-			{ text = "󰧞 ", texthl = "DapBreakpoint", linehl = "", numhl = "", priority = 20 }
+			{ text = "󰄯 "  , texthl = "DapBreakpoint", linehl = "", numhl = "", priority = 20 }
 		)
 		vim.fn.sign_define(
 			"DapBreakpointCondition",
-			{ text = " ", texthl = "DapBreakpoint", linehl = "", numhl = "", priority = 20 }
-		)
+			{ text = "󰐗 ", texthl = "DapBreakpoint", linehl = "", numhl = "", priority = 20 }
+		) 
 		vim.fn.sign_define(
 			"DapLogPoint",
-			{ text = " ", texthl = "DapLogPoint", linehl = "", numhl = "", priority = 20 }
+			{ text = "󰣏", texthl = "DapLogPoint", linehl = "", numhl = "", priority = 20 }
 		)
 		vim.fn.sign_define(
 			"DapStopped",
-			{ text = "󱦰 ", texthl = "DapStopped", linehl = "DapStopped", numhl = "DapStopped", priority = 30 }
+			{ text = " ", texthl = "DapStopped", linehl = "DapStopped", numhl = "DapStopped", priority = 30 }
 		)
 		vim.fn.sign_define(
 			"DapBreakpointRejected",
-			{ text = " ", texthl = "DapBreakpointRejected", linehl = "", numhl = "", priority = 20 }
+			{ text = "󱃓 ", texthl = "DapBreakpointRejected", linehl = "", numhl = "", priority = 20 }
 		)
 
 		-- Custom signs for disabled breakpoints
@@ -69,7 +69,7 @@ return {
 		)
 		vim.fn.sign_define(
 			"DapLogPointDisabled",
-			{ text = " ", texthl = "DapLogPoint", linehl = "", numhl = "", priority = 20 }
+			{ text = "󱀝", texthl = "DapLogPoint", linehl = "", numhl = "", priority = 20 }
 		)
 
 		-- Define highlight groups with colors

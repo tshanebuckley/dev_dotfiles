@@ -52,13 +52,13 @@ return {
 					update_in_insert = true,
 				})
 			-- ensure that lsp import renaming is to include file operations
-			lspconfig.util.default_config = vim.tbl_extend("force", lspconfig.util.default_config, {
-				capabilities = vim.tbl_deep_extend(
-					"force",
-					vim.lsp.protocol.make_client_capabilities(),
-					require("lsp-file-operations").default_capabilities()
-				),
-			})
+			-- lspconfig.util.default_config = vim.tbl_extend("force", lspconfig.util.default_config, {
+			-- 	capabilities = vim.tbl_deep_extend(
+			-- 		"force",
+			-- 		vim.lsp.protocol.make_client_capabilities(),
+			-- 		require("lsp-file-operations").default_capabilities()
+			-- 	),
+			-- })
 			-- add our key bindings
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
