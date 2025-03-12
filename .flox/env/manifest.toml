@@ -57,8 +57,6 @@ fd.pkg-path = "fd"
 [profile]
 common = '''
     # symlink our dotfiles
-    echo $PWD
-    echo $VENV_HOME
     stow --dir="$PWD" --target="$VENV_HOME" -R nvim -R zellij
     # symlink our flox executable to the venv user space
     FLOX_SYMLINK=/usr/bin/flox

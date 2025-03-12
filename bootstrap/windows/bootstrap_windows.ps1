@@ -236,6 +236,36 @@ New-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer
 # Disable Aero Shake to minimize other windows
 New-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "DisallowShaking" -Value 1 -PropertyType DWORD -Force
 
+# Disable Windows Key Shortcuts
+$registryPath = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer"
+$registryName = "NoWinKeys"
+$registryValue = 1
+
+# Ensure the registry path exists
+If (!(Test-Path $registryPath)) {
+    New-Item -Path $registryPath -Force | Out-Null
+}
+
+# Set the registry value to disable Windows key shortcuts
+Set-ItemProperty -Path $registryPath -Name $registryName -Value $registryValue -Type DWORD -Force
+
+# Disable Task Switcher (Alt+Tab)
+$registryPath2 = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Policies\System"
+$registryName2 = "DisableTaskSwitching"
+$registryValue2 = 1
+
+If (!(Test-Path $registryPath2)) {
+    New-Item -Path $registryPath2 -Force | Out-Null
+}
+
+Set-ItemProperty -Path $registryPath2 -Name $registryName2 -Value $registryValue2 -Type DWORD -Force
+
+# Disable Sticky Keys and Filter Keys shortcuts
+$registryPath3 = "HKCU:\Control Panel\Accessibility\StickyKeys"
+Set-ItemProperty -Path $registryPath3 -Name "Flags" -Value 506
+$registryPath4 = "HKCU:\Control Panel\Accessibility\Keyboard Response"
+Set-ItemProperty -Path $registryPath4 -Name "Flags" -Value 122
+
 # Stop and restart explorer process to apply changes immediately
 Stop-Process -Name explorer -Force
 Start-Process explorer
