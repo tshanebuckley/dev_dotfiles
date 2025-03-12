@@ -56,6 +56,7 @@ fd.pkg-path = "fd"
 # `profile.{bash,fish,tcsh,zsh}` is sourced by the corresponding shell.
 [profile]
 common = '''
+    export LC_ALL=C
     # symlink our dotfiles
     stow --dir="$PWD" --target="$VENV_HOME" -R nvim -R zellij
     # symlink our flox executable to the venv user space

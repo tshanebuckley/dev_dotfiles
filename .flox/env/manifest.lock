@@ -51,7 +51,7 @@
     },
     "hook": {},
     "profile": {
-      "common": "    # symlink our dotfiles\n    echo $PWD\n    echo $VENV_HOME\n    stow --dir=\"$PWD\" --target=\"$VENV_HOME\" -R nvim -R zellij\n    # symlink our flox executable to the venv user space\n    FLOX_SYMLINK=/usr/bin/flox\n    if [ ! -e \"${VENV_HOME}/.local/bin/flox\" ]; then\n        ln -s \"${FLOX_SYMLINK}\" \"${VENV_HOME}/.local/bin\"\n    fi\n    # pass the venv home value forward to be used in sourcing the .bashrc file\n    SCRIPT_DIR=\"$VENV_HOME\"\n    source \"${VENV_HOME}/.bashrc\"\n"
+      "common": "    export LC_ALL=C\n    # symlink our dotfiles\n    stow --dir=\"$PWD\" --target=\"$VENV_HOME\" -R nvim -R zellij\n    # symlink our flox executable to the venv user space\n    FLOX_SYMLINK=/usr/bin/flox\n    if [ ! -e \"${VENV_HOME}/.local/bin/flox\" ]; then\n        ln -s \"${FLOX_SYMLINK}\" \"${VENV_HOME}/.local/bin\"\n    fi\n    # pass the venv home value forward to be used in sourcing the .bashrc file\n    SCRIPT_DIR=\"$VENV_HOME\"\n    source \"${VENV_HOME}/.bashrc\"\n"
     },
     "options": {
       "systems": [
