@@ -24,6 +24,12 @@ gcc.pkg-path = "gcc"
 luarocks.pkg-path = "luarocks"
 which.pkg-path = "which"
 fd.pkg-path = "fd"
+curl.pkg-path = "curl"
+gzip.pkg-path = "gzip"
+gnutar.pkg-path = "gnutar"
+imagemagick.pkg-path = "imagemagick"
+imgcat.pkg-path = "imgcat"
+locale.pkg-path = "locale"
 # hello.pkg-path = "hello"
 # nodejs = { version = "^20.15.1", pkg-path = "nodejs" }
 
@@ -56,7 +62,6 @@ fd.pkg-path = "fd"
 # `profile.{bash,fish,tcsh,zsh}` is sourced by the corresponding shell.
 [profile]
 common = '''
-    export LC_ALL=C
     # symlink our dotfiles
     stow --dir="$PWD" --target="$VENV_HOME" -R nvim -R zellij
     # symlink our flox executable to the venv user space

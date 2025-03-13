@@ -9,6 +9,9 @@
       "coreutils-full": {
         "pkg-path": "coreutils-full"
       },
+      "curl": {
+        "pkg-path": "curl"
+      },
       "fd": {
         "pkg-path": "fd"
       },
@@ -20,6 +23,21 @@
       },
       "git": {
         "pkg-path": "git"
+      },
+      "gnutar": {
+        "pkg-path": "gnutar"
+      },
+      "gzip": {
+        "pkg-path": "gzip"
+      },
+      "imagemagick": {
+        "pkg-path": "imagemagick"
+      },
+      "imgcat": {
+        "pkg-path": "imgcat"
+      },
+      "locale": {
+        "pkg-path": "locale"
       },
       "luarocks": {
         "pkg-path": "luarocks"
@@ -51,7 +69,7 @@
     },
     "hook": {},
     "profile": {
-      "common": "    export LC_ALL=C\n    # symlink our dotfiles\n    stow --dir=\"$PWD\" --target=\"$VENV_HOME\" -R nvim -R zellij\n    # symlink our flox executable to the venv user space\n    FLOX_SYMLINK=/usr/bin/flox\n    if [ ! -e \"${VENV_HOME}/.local/bin/flox\" ]; then\n        ln -s \"${FLOX_SYMLINK}\" \"${VENV_HOME}/.local/bin\"\n    fi\n    # pass the venv home value forward to be used in sourcing the .bashrc file\n    SCRIPT_DIR=\"$VENV_HOME\"\n    source \"${VENV_HOME}/.bashrc\"\n"
+      "common": "    # symlink our dotfiles\n    stow --dir=\"$PWD\" --target=\"$VENV_HOME\" -R nvim -R zellij\n    # symlink our flox executable to the venv user space\n    FLOX_SYMLINK=/usr/bin/flox\n    if [ ! -e \"${VENV_HOME}/.local/bin/flox\" ]; then\n        ln -s \"${FLOX_SYMLINK}\" \"${VENV_HOME}/.local/bin\"\n    fi\n    # pass the venv home value forward to be used in sourcing the .bashrc file\n    SCRIPT_DIR=\"$VENV_HOME\"\n    source \"${VENV_HOME}/.bashrc\"\n"
     },
     "options": {
       "systems": [
@@ -346,6 +364,156 @@
         "debug": "/nix/store/59100miigmp7qiz4bb6jlla895z86wyr-coreutils-full-9.5-debug",
         "info": "/nix/store/z26cfsxf0dd7c26yalm2bly7zqhzakay-coreutils-full-9.5-info",
         "out": "/nix/store/fzd7zvk8gfiqharv5gdvxpsf4paq0d0i-coreutils-full-9.5"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "curl",
+      "broken": false,
+      "derivation": "/nix/store/60xxwy8fpbdifjlh9lx9ffg44rmhwkca-curl-8.11.0.drv",
+      "description": "Command line tool for transferring files with URL syntax",
+      "install_id": "curl",
+      "license": "curl",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+      "name": "curl-8.11.0",
+      "pname": "curl",
+      "rev": "4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+      "rev_count": 712559,
+      "rev_date": "2024-11-25T07:53:41Z",
+      "scrape_date": "2024-11-27T03:52:37Z",
+      "stabilities": [
+        "lts",
+        "stable",
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "8.11.0",
+      "outputs_to_install": [
+        "bin",
+        "man"
+      ],
+      "outputs": {
+        "bin": "/nix/store/nnikik66h1i9pirm86685gsx12cr9fix-curl-8.11.0-bin",
+        "dev": "/nix/store/7rmqp8prvgxac73s6sqymnkff18kmhxb-curl-8.11.0-dev",
+        "devdoc": "/nix/store/q63dfwa5zlgya57vgk1wrsv1cggx17ag-curl-8.11.0-devdoc",
+        "man": "/nix/store/ird5cbdpbf3zjlmnvrbk54vw26x511kk-curl-8.11.0-man",
+        "out": "/nix/store/b4mz7xlyv99bdrdb9z0yq1imgjwlx20l-curl-8.11.0"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "curl",
+      "broken": false,
+      "derivation": "/nix/store/3ywrmiw7fb8b22h3yw8vrg4vv945idd9-curl-8.11.0.drv",
+      "description": "Command line tool for transferring files with URL syntax",
+      "install_id": "curl",
+      "license": "curl",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+      "name": "curl-8.11.0",
+      "pname": "curl",
+      "rev": "4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+      "rev_count": 712559,
+      "rev_date": "2024-11-25T07:53:41Z",
+      "scrape_date": "2024-11-27T03:52:37Z",
+      "stabilities": [
+        "lts",
+        "stable",
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "8.11.0",
+      "outputs_to_install": [
+        "bin",
+        "man"
+      ],
+      "outputs": {
+        "bin": "/nix/store/3h40h6q80knif55wvdx0qcz72fjw8crc-curl-8.11.0-bin",
+        "debug": "/nix/store/cfjpyw5bbslnl6a8n43bl1yjqnp8vbc1-curl-8.11.0-debug",
+        "dev": "/nix/store/6ydf7d2j8lcszzvmadnyxsf11ikx517h-curl-8.11.0-dev",
+        "devdoc": "/nix/store/img4rmd3gd8wiahagrfsscq812a7aggw-curl-8.11.0-devdoc",
+        "man": "/nix/store/wx27cnm4x44gs13kdyiplrmvj03ab4q8-curl-8.11.0-man",
+        "out": "/nix/store/ygwnjglxwvmladk25fsdghzh2cacczfg-curl-8.11.0"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "curl",
+      "broken": false,
+      "derivation": "/nix/store/zyi9364hscqw6zrccb67j5g2sc28nrfp-curl-8.11.0.drv",
+      "description": "Command line tool for transferring files with URL syntax",
+      "install_id": "curl",
+      "license": "curl",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+      "name": "curl-8.11.0",
+      "pname": "curl",
+      "rev": "4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+      "rev_count": 712559,
+      "rev_date": "2024-11-25T07:53:41Z",
+      "scrape_date": "2024-11-27T03:52:37Z",
+      "stabilities": [
+        "lts",
+        "stable",
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "8.11.0",
+      "outputs_to_install": [
+        "bin",
+        "man"
+      ],
+      "outputs": {
+        "bin": "/nix/store/740pphyabn1dmrl58p26xdqfnfckbcir-curl-8.11.0-bin",
+        "dev": "/nix/store/d3y9362zhb6jjw3aj98xnkj7a2f5ris0-curl-8.11.0-dev",
+        "devdoc": "/nix/store/bzng06n0agwkxbgrk5rfm0i6hv6l8b6z-curl-8.11.0-devdoc",
+        "man": "/nix/store/jgnjz8ibbrnkm3ga27mfvwrqhqz3h0dx-curl-8.11.0-man",
+        "out": "/nix/store/zjgsyb3n5sasw8jmixx97jh32ywrzspx-curl-8.11.0"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "curl",
+      "broken": false,
+      "derivation": "/nix/store/lyayny5miyiz1pccqfpqnygnyq0hf5kn-curl-8.11.0.drv",
+      "description": "Command line tool for transferring files with URL syntax",
+      "install_id": "curl",
+      "license": "curl",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+      "name": "curl-8.11.0",
+      "pname": "curl",
+      "rev": "4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+      "rev_count": 712559,
+      "rev_date": "2024-11-25T07:53:41Z",
+      "scrape_date": "2024-11-27T03:52:37Z",
+      "stabilities": [
+        "lts",
+        "stable",
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "8.11.0",
+      "outputs_to_install": [
+        "bin",
+        "man"
+      ],
+      "outputs": {
+        "bin": "/nix/store/glxqkgx86mir5f756zr7a7clgzhggg43-curl-8.11.0-bin",
+        "debug": "/nix/store/1ydpd4pdb2cqm3cxy0awa62628cm04ab-curl-8.11.0-debug",
+        "dev": "/nix/store/nnsm67hycch65y7pandck3c28g9q5p7h-curl-8.11.0-dev",
+        "devdoc": "/nix/store/8h3prj4fzbc2jl6df6l82hgf3yhvss1z-curl-8.11.0-devdoc",
+        "man": "/nix/store/0pas219azsv4hpriqcwrr3fxis0g6fr1-curl-8.11.0-man",
+        "out": "/nix/store/lz8snrzdzwkcbdjccqxd2r4f792cnwsg-curl-8.11.0"
       },
       "system": "x86_64-linux",
       "group": "toplevel",
@@ -884,6 +1052,662 @@
         "debug": "/nix/store/yzj0y9yq01yfqmpwvifwqlnws90yq60l-git-2.47.0-debug",
         "doc": "/nix/store/851nl4fknnygvx9qmkmm7iqlv66l4fzg-git-2.47.0-doc",
         "out": "/nix/store/pxpns5vm111i6j3r3wbygaj99wbrm6h1-git-2.47.0"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "gnutar",
+      "broken": false,
+      "derivation": "/nix/store/8fsrr302rpp5pq4miqhsazz6jdg23san-gnutar-1.35.drv",
+      "description": "GNU implementation of the `tar' archiver",
+      "install_id": "gnutar",
+      "license": "GPL-3.0-or-later",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+      "name": "gnutar-1.35",
+      "pname": "gnutar",
+      "rev": "4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+      "rev_count": 712559,
+      "rev_date": "2024-11-25T07:53:41Z",
+      "scrape_date": "2024-11-27T03:52:37Z",
+      "stabilities": [
+        "lts",
+        "stable",
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.35",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "info": "/nix/store/gb0yn7qlzhzlp2s3miip4rsgigxvhwdr-gnutar-1.35-info",
+        "out": "/nix/store/41dh2jr0d4ixcbjvkw72hqvrj0kv3mfh-gnutar-1.35"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "gnutar",
+      "broken": false,
+      "derivation": "/nix/store/mx5rd4x0ww450ij8y7iwv9349bymjbkz-gnutar-1.35.drv",
+      "description": "GNU implementation of the `tar' archiver",
+      "install_id": "gnutar",
+      "license": "GPL-3.0-or-later",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+      "name": "gnutar-1.35",
+      "pname": "gnutar",
+      "rev": "4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+      "rev_count": 712559,
+      "rev_date": "2024-11-25T07:53:41Z",
+      "scrape_date": "2024-11-27T03:52:37Z",
+      "stabilities": [
+        "lts",
+        "stable",
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.35",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "info": "/nix/store/914x74br5njvbqbnkz52w96vmmfza51q-gnutar-1.35-info",
+        "out": "/nix/store/cxjg4mp0i4brhhxzpfalhxr32g28g9xq-gnutar-1.35"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "gnutar",
+      "broken": false,
+      "derivation": "/nix/store/lfljmxdplxy9viagvmphia1wz38ndayp-gnutar-1.35.drv",
+      "description": "GNU implementation of the `tar' archiver",
+      "install_id": "gnutar",
+      "license": "GPL-3.0-or-later",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+      "name": "gnutar-1.35",
+      "pname": "gnutar",
+      "rev": "4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+      "rev_count": 712559,
+      "rev_date": "2024-11-25T07:53:41Z",
+      "scrape_date": "2024-11-27T03:52:37Z",
+      "stabilities": [
+        "lts",
+        "stable",
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.35",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "info": "/nix/store/ipm9accnixpm97vnplb0j66y6wrlcf71-gnutar-1.35-info",
+        "out": "/nix/store/mij3k3il21ra506pca3w1gz5g9d6vc3i-gnutar-1.35"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "gnutar",
+      "broken": false,
+      "derivation": "/nix/store/nancjvgfjhsvygs4mhckc0ip08g8hz28-gnutar-1.35.drv",
+      "description": "GNU implementation of the `tar' archiver",
+      "install_id": "gnutar",
+      "license": "GPL-3.0-or-later",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+      "name": "gnutar-1.35",
+      "pname": "gnutar",
+      "rev": "4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+      "rev_count": 712559,
+      "rev_date": "2024-11-25T07:53:41Z",
+      "scrape_date": "2024-11-27T03:52:37Z",
+      "stabilities": [
+        "lts",
+        "stable",
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.35",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "info": "/nix/store/lbkfsp8jrfnk6b6817iiijbcs3rmgcc3-gnutar-1.35-info",
+        "out": "/nix/store/sdljgkhcmlflr785i4jffg1rvm294i1k-gnutar-1.35"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "gzip",
+      "broken": false,
+      "derivation": "/nix/store/6vkv9wh7j4paqamrb8knji5lvxyf7ag3-gzip-1.13.drv",
+      "description": "GNU zip compression program",
+      "install_id": "gzip",
+      "license": "GPL-3.0-or-later",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+      "name": "gzip-1.13",
+      "pname": "gzip",
+      "rev": "4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+      "rev_count": 712559,
+      "rev_date": "2024-11-25T07:53:41Z",
+      "scrape_date": "2024-11-27T03:52:37Z",
+      "stabilities": [
+        "lts",
+        "stable",
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.13",
+      "outputs_to_install": [
+        "man",
+        "out"
+      ],
+      "outputs": {
+        "info": "/nix/store/9kl38agrsm4mn3fdzppb65rg6vj38g07-gzip-1.13-info",
+        "man": "/nix/store/0y5ha72s3wpsbyaf3v2d4gzqrhldlwdx-gzip-1.13-man",
+        "out": "/nix/store/jnnmwj5nsh4y8avg72q23nshq5z74pck-gzip-1.13"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "gzip",
+      "broken": false,
+      "derivation": "/nix/store/iqk8ls1xpygswfnxhvzi4hga92ibwinz-gzip-1.13.drv",
+      "description": "GNU zip compression program",
+      "install_id": "gzip",
+      "license": "GPL-3.0-or-later",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+      "name": "gzip-1.13",
+      "pname": "gzip",
+      "rev": "4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+      "rev_count": 712559,
+      "rev_date": "2024-11-25T07:53:41Z",
+      "scrape_date": "2024-11-27T03:52:37Z",
+      "stabilities": [
+        "lts",
+        "stable",
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.13",
+      "outputs_to_install": [
+        "man",
+        "out"
+      ],
+      "outputs": {
+        "info": "/nix/store/gdiznjbd6hqbl1pi4qg8yw2g6ni8yxxn-gzip-1.13-info",
+        "man": "/nix/store/3943ip7ivgbpzyi3s48r31wsw4fq2iz1-gzip-1.13-man",
+        "out": "/nix/store/xjl8rkn0b43gsh0lcsrwp1g1ranvxk6f-gzip-1.13"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "gzip",
+      "broken": false,
+      "derivation": "/nix/store/lhhr5ba7ybpdhd1vip1m52wprv8wrqix-gzip-1.13.drv",
+      "description": "GNU zip compression program",
+      "install_id": "gzip",
+      "license": "GPL-3.0-or-later",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+      "name": "gzip-1.13",
+      "pname": "gzip",
+      "rev": "4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+      "rev_count": 712559,
+      "rev_date": "2024-11-25T07:53:41Z",
+      "scrape_date": "2024-11-27T03:52:37Z",
+      "stabilities": [
+        "lts",
+        "stable",
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.13",
+      "outputs_to_install": [
+        "man",
+        "out"
+      ],
+      "outputs": {
+        "info": "/nix/store/5zh8jdiyyk4wmjsyqsl8a9vi0gw4bvzs-gzip-1.13-info",
+        "man": "/nix/store/ysi14sgqdz562q9mvc0dhq8vw0vqj42d-gzip-1.13-man",
+        "out": "/nix/store/i6w5gh3nn79ym0fhhx0bnqkfp23bg0jq-gzip-1.13"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "gzip",
+      "broken": false,
+      "derivation": "/nix/store/s4yv5jwiyy8pmj3s092rsw395pvzvsgd-gzip-1.13.drv",
+      "description": "GNU zip compression program",
+      "install_id": "gzip",
+      "license": "GPL-3.0-or-later",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+      "name": "gzip-1.13",
+      "pname": "gzip",
+      "rev": "4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+      "rev_count": 712559,
+      "rev_date": "2024-11-25T07:53:41Z",
+      "scrape_date": "2024-11-27T03:52:37Z",
+      "stabilities": [
+        "lts",
+        "stable",
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.13",
+      "outputs_to_install": [
+        "man",
+        "out"
+      ],
+      "outputs": {
+        "info": "/nix/store/1mlyi2c28013wg4q8p1qaj26hcxkkxar-gzip-1.13-info",
+        "man": "/nix/store/khgkzrmzikvk6dk26wxyvs5dgi3vh3qv-gzip-1.13-man",
+        "out": "/nix/store/pg1n8f8zlwh4q4bsbnm9gwhx7cbix1m6-gzip-1.13"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "imagemagick",
+      "broken": false,
+      "derivation": "/nix/store/yrrv6qy2ra32lzcvvv3n863wdhdqacgy-imagemagick-7.1.1-40.drv",
+      "description": "Software suite to create, edit, compose, or convert bitmap images",
+      "install_id": "imagemagick",
+      "license": "Apache-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+      "name": "imagemagick-7.1.1-40",
+      "pname": "imagemagick",
+      "rev": "4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+      "rev_count": 712559,
+      "rev_date": "2024-11-25T07:53:41Z",
+      "scrape_date": "2024-11-27T03:52:37Z",
+      "stabilities": [
+        "lts",
+        "stable",
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "7.1.1-40",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dev": "/nix/store/h2sa7brbdl1rj14fi9aqv4bjs8iyxjd2-imagemagick-7.1.1-40-dev",
+        "doc": "/nix/store/j5ckhrp4xqgkiydy4kf62s33qb32xclz-imagemagick-7.1.1-40-doc",
+        "out": "/nix/store/9bjcb5bv73wpimd59f4wkfpv2ykkygdf-imagemagick-7.1.1-40"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "imagemagick",
+      "broken": false,
+      "derivation": "/nix/store/h4qf8n36w44lhr28r71qhv2i0yrnl96v-imagemagick-7.1.1-40.drv",
+      "description": "Software suite to create, edit, compose, or convert bitmap images",
+      "install_id": "imagemagick",
+      "license": "Apache-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+      "name": "imagemagick-7.1.1-40",
+      "pname": "imagemagick",
+      "rev": "4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+      "rev_count": 712559,
+      "rev_date": "2024-11-25T07:53:41Z",
+      "scrape_date": "2024-11-27T03:52:37Z",
+      "stabilities": [
+        "lts",
+        "stable",
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "7.1.1-40",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dev": "/nix/store/0p0808k0m1xlhlmp5sp9m8977mj9n9j8-imagemagick-7.1.1-40-dev",
+        "doc": "/nix/store/595c3bi6ingv0xkvphlql2yjq92nlw6v-imagemagick-7.1.1-40-doc",
+        "out": "/nix/store/0w7kf0j5hclslzb52z4qfn8hn2rjlhn4-imagemagick-7.1.1-40"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "imagemagick",
+      "broken": false,
+      "derivation": "/nix/store/zcapzngwlq76yw9n8pkfp5b01l8c4b7x-imagemagick-7.1.1-40.drv",
+      "description": "Software suite to create, edit, compose, or convert bitmap images",
+      "install_id": "imagemagick",
+      "license": "Apache-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+      "name": "imagemagick-7.1.1-40",
+      "pname": "imagemagick",
+      "rev": "4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+      "rev_count": 712559,
+      "rev_date": "2024-11-25T07:53:41Z",
+      "scrape_date": "2024-11-27T03:52:37Z",
+      "stabilities": [
+        "lts",
+        "stable",
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "7.1.1-40",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dev": "/nix/store/2drj5im1kr81ww88nw2h4jvjgdjppiqy-imagemagick-7.1.1-40-dev",
+        "doc": "/nix/store/i08iqcdzzil953jbhiykv041w2xr5brw-imagemagick-7.1.1-40-doc",
+        "out": "/nix/store/qm1dql1adnqmqcs1bkddclzf7kp1lbq9-imagemagick-7.1.1-40"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "imagemagick",
+      "broken": false,
+      "derivation": "/nix/store/gayjgq26l6zzw4kj20abg3lx0mx786jc-imagemagick-7.1.1-40.drv",
+      "description": "Software suite to create, edit, compose, or convert bitmap images",
+      "install_id": "imagemagick",
+      "license": "Apache-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+      "name": "imagemagick-7.1.1-40",
+      "pname": "imagemagick",
+      "rev": "4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+      "rev_count": 712559,
+      "rev_date": "2024-11-25T07:53:41Z",
+      "scrape_date": "2024-11-27T03:52:37Z",
+      "stabilities": [
+        "lts",
+        "stable",
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "7.1.1-40",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dev": "/nix/store/s5vd4n17gcy33jrvridvnqw6ijvmbac0-imagemagick-7.1.1-40-dev",
+        "doc": "/nix/store/4ivgxlvw1fkn06s36gdi8xdwwdc0qr27-imagemagick-7.1.1-40-doc",
+        "out": "/nix/store/ym0d0c1hpxinxvr2qrfg1d1b9wnz6i71-imagemagick-7.1.1-40"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "imgcat",
+      "broken": false,
+      "derivation": "/nix/store/20s560m60klxrmm32fnphrgg2lvrsrf0-imgcat-2.6.0.drv",
+      "description": "It's like cat, but for images",
+      "install_id": "imgcat",
+      "license": "ISC",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+      "name": "imgcat-2.6.0",
+      "pname": "imgcat",
+      "rev": "4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+      "rev_count": 712559,
+      "rev_date": "2024-11-25T07:53:41Z",
+      "scrape_date": "2024-11-27T03:52:37Z",
+      "stabilities": [
+        "lts",
+        "stable",
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "2.6.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/9nh4yrzlynskii0d1igg3qqkc3f9zp8d-imgcat-2.6.0"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "imgcat",
+      "broken": false,
+      "derivation": "/nix/store/77a2jawy87dw80s23v586gmn47qa8jz4-imgcat-2.6.0.drv",
+      "description": "It's like cat, but for images",
+      "install_id": "imgcat",
+      "license": "ISC",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+      "name": "imgcat-2.6.0",
+      "pname": "imgcat",
+      "rev": "4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+      "rev_count": 712559,
+      "rev_date": "2024-11-25T07:53:41Z",
+      "scrape_date": "2024-11-27T03:52:37Z",
+      "stabilities": [
+        "lts",
+        "stable",
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "2.6.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/jmcmxll1dzz91d3k98b2rl7vgbnd81i3-imgcat-2.6.0"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "imgcat",
+      "broken": false,
+      "derivation": "/nix/store/v8rwalg7w9fawsqbh73c85mihgxyad2r-imgcat-2.6.0.drv",
+      "description": "It's like cat, but for images",
+      "install_id": "imgcat",
+      "license": "ISC",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+      "name": "imgcat-2.6.0",
+      "pname": "imgcat",
+      "rev": "4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+      "rev_count": 712559,
+      "rev_date": "2024-11-25T07:53:41Z",
+      "scrape_date": "2024-11-27T03:52:37Z",
+      "stabilities": [
+        "lts",
+        "stable",
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "2.6.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/xvx6d0y965r1sb7zw09kc9zbysrs77sn-imgcat-2.6.0"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "imgcat",
+      "broken": false,
+      "derivation": "/nix/store/c1y6lpjirkv9n875fn3azi4dwdf56hg8-imgcat-2.6.0.drv",
+      "description": "It's like cat, but for images",
+      "install_id": "imgcat",
+      "license": "ISC",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+      "name": "imgcat-2.6.0",
+      "pname": "imgcat",
+      "rev": "4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+      "rev_count": 712559,
+      "rev_date": "2024-11-25T07:53:41Z",
+      "scrape_date": "2024-11-27T03:52:37Z",
+      "stabilities": [
+        "lts",
+        "stable",
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "2.6.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/kadwdwbc752798mwlk8qhys8zb5mk4qp-imgcat-2.6.0"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "locale",
+      "broken": false,
+      "derivation": "/nix/store/5c8cic3fmrvf2yr66cdp5wknvq38dx78-locale-adv_cmds-231.drv",
+      "install_id": "locale",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+      "name": "locale-adv_cmds-231",
+      "pname": "locale",
+      "rev": "4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+      "rev_count": 712559,
+      "rev_date": "2024-11-25T07:53:41Z",
+      "scrape_date": "2024-11-27T03:52:37Z",
+      "stabilities": [
+        "lts",
+        "stable",
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "231",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/2mabxxkf36g20qshs15l6db3q891rah6-locale-adv_cmds-231"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "locale",
+      "broken": false,
+      "derivation": "/nix/store/9dbq6g2zchfq8kqcydvfam4nz4j4pqa7-locale-glibc-2.40-36.drv",
+      "install_id": "locale",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+      "name": "locale-glibc-2.40-36",
+      "pname": "locale",
+      "rev": "4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+      "rev_count": 712559,
+      "rev_date": "2024-11-25T07:53:41Z",
+      "scrape_date": "2024-11-27T03:52:37Z",
+      "stabilities": [
+        "lts",
+        "stable",
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "2.40-36",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/rhr929pnd5002iw49n9k16is9lf8vyws-locale-glibc-2.40-36"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "locale",
+      "broken": false,
+      "derivation": "/nix/store/9s6cdl4wv01fc9cwckwq2dpmxnlrnqyg-locale-adv_cmds-231.drv",
+      "install_id": "locale",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+      "name": "locale-adv_cmds-231",
+      "pname": "locale",
+      "rev": "4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+      "rev_count": 712559,
+      "rev_date": "2024-11-25T07:53:41Z",
+      "scrape_date": "2024-11-27T03:52:37Z",
+      "stabilities": [
+        "lts",
+        "stable",
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "231",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/42khab5az8379vxcyyqf6xfw8bbc2w5k-locale-adv_cmds-231"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "locale",
+      "broken": false,
+      "derivation": "/nix/store/mdadzsi19kc9kzbyjy74hm271i8wgd4h-locale-glibc-2.40-36.drv",
+      "install_id": "locale",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+      "name": "locale-glibc-2.40-36",
+      "pname": "locale",
+      "rev": "4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+      "rev_count": 712559,
+      "rev_date": "2024-11-25T07:53:41Z",
+      "scrape_date": "2024-11-27T03:52:37Z",
+      "stabilities": [
+        "lts",
+        "stable",
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "2.40-36",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/pqxjgbf1a3ivq5lqc9l1fa5nrrhp44f5-locale-glibc-2.40-36"
       },
       "system": "x86_64-linux",
       "group": "toplevel",

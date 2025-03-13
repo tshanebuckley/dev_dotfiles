@@ -2,7 +2,9 @@
 scoop install git
 scoop bucket add extras
 # install Ueli Launcher
-scoop install extras/ueli
+#scoop install extras/ueli
+# install Fluent Search
+scoop install extras/fluent-search
 # install Zebar
 scoop install extras/zebar
 # install GlazeWM for managing windows
@@ -11,6 +13,12 @@ scoop install extras/glazewm
 scoop install extras/rio
 # install AutoHotKey to override the windows keys
 scoop install extras/autohotkey
+
+# this a requirement for glaze
+winget install --id=Microsoft.VCRedist.2015+.x64  -e --scope user --accept-package-agreements --accept-source-agreements 
+
+# Get the path to the Startup folder for the current user
+$startupFolder = "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup"
 
 # Create a symlink for GlazeWM to have it start on login
 # Find the path to the GlazeWM executable installed via Scoop
@@ -23,9 +31,6 @@ if (!(Test-Path $glazeWmPath)) {
     exit
 }
 
-# Get the path to the Startup folder for the current user
-$startupFolder = "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup"
-
 # Create the shortcut for GlazeWM to activate on login
 $shortcutPath = "$startupFolder\GlazeWM.lnk"
 $WshShell = New-Object -ComObject WScript.Shell
@@ -35,6 +40,27 @@ $Shortcut.Save()
 
 Write-Host "GlazeWM shortcut has been created in your startup folder."
 Write-Host "GlazeWM will now start automatically when you log in."
+
+# Create a symlink for FluentSearch to have it start on login
+# Find the path to Fluent Search executable installed via scoop
+$fluentSearchWmPath = "$env:USERPROFILE\scoop\apps\fluent-search\current\FluentSearch.exe"
+
+# Verify the path exists
+if (!(Test-Path $fluentSearchWmPath)) {
+    Write-Host "Fluent Search executable not found at expected path: $fluentSearchWmPath"
+    Write-Host "Please check your Scoop installation path and update the script accordingly."
+    exit
+}
+
+# Create the shortcut for Fluent Search to activate on login
+$shortcutPath = "$startupFolder\FluentSearch.lnk"
+$WshShell = New-Object -ComObject WScript.Shell
+$Shortcut = $WshShell.CreateShortcut($shortcutPath)
+$Shortcut.TargetPath = $fluentSearchWmPath
+$Shortcut.Save()
+
+Write-Host "Fluent Search shortcut has been created in your startup folder."
+Write-Host "Fluent Search will now start automatically when you log in."
 
 # Create an AutoHotkey script to disable Windows key default behavior
 $ahkScriptPath = "$env:USERPROFILE\Documents\WindowKeyRedirect.ahk"
@@ -151,7 +177,6 @@ RWin & Enter::SendInput("{Blind}{RWin Down}{Enter}{RWin Up}")
 New-Item -Path $ahkScriptPath -Value $ahkScript -Force
 
 # Create the shortcut for AutoHotKey to activate on login
-$startupFolder = "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup"
 $shortcutPath = "$startupFolder\WindowKeyRedirect.lnk"
 $WshShell = New-Object -ComObject WScript.Shell
 $Shortcut = $WshShell.CreateShortcut($shortcutPath)

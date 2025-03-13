@@ -2,7 +2,7 @@ general:
   # Commands to run when the WM has started. This is useful for running a
   # script or launching another application.
   # Example: The below command launches Zebar.
-  startup_commands: ['shell-exec zebar', 'shell-exec ueli']
+  startup_commands: ['shell-exec zebar']
 
   # Commands to run just before the WM is shutdown.
   # Example: The below command kills Zebar.
@@ -48,7 +48,7 @@ gaps:
 
   # Gap between windows and the screen edge.
   outer_gap:
-    top: '42px'
+    top: '2px'
     right: '2px'
     bottom: '2px'
     left: '2px'
@@ -147,10 +147,6 @@ window_rules:
         window_title: { regex: '.*? - Peek' }
       - window_process: { equals: 'Lively' }
         window_class: { regex: 'HwndWrapper' }
-
-      # Ignore Ueli, our app launcher
-      - window_process: { equals: 'Ueli' }
-
 
 binding_modes:
   # When enabled, the focused window can be resized via arrow keys or HJKL.
